@@ -1,0 +1,18 @@
+AllCops:
+  TargetRubyVersion: 3.0
+  NewCops: enable
+  Exclude:
+    - 'bin/**/*'
+    - 'vendor/**/*'
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'node_modules/**/*'
+
+Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Metrics/BlockLength:
+  IgnoredMethods: ['describe', 'context', 'feature', 'scenario', 'let']

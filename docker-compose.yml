@@ -1,0 +1,23 @@
+version: '3'
+services:
+  db:
+    image: postgres:13
+    volumes:
+      - farmers_data:/var/lib/postgresqldata
+    environment:
+      - POSTGRES_PASSWORD=postgres
+  web:
+    build: .
+    volumes:
+      - .:/farmers_app
+    ports:
+      - '3000:3000'
+    depends_on:
+      - db
+    environment:
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_HOST=db
+volumes:
+  farmers_data:
