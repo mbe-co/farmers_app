@@ -1,24 +1,20 @@
-# README
+### Farmers App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Este projeto será construído para gerenciar a dinâmica de compras em feira para
+clientes.
 
-Things you may want to cover:
+Os clientes efetuarão seus pedidos pelo site. No fechamento do período estipulado,
+será contabilizado quanto de cada produto deverá ser comprado.
 
-* Ruby version
+Após as compras feitas, bastará inserir o valor gasto com os totais e o sistema
+calculará quanto cada cliente deverá pagar.
 
-* System dependencies
+## Instalação
 
-* Configuration
+É necessário possuir apenas o `docker` e `docker-compose` instalados. Uma vez que
+o seu sistema satisfaz essas dependências, basta clonar o projeto, entrar no
+diretório principal e rodar do seu terminal `.scripts/farmers setup`.
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+O projeto possui um script para facilitar o uso de alguns comandos mais usados.
+Assim que finalizar o setup, execute `farmers` em seu terminal e veja a lista de
+opções disponíveis.
