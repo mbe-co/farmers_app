@@ -1,0 +1,63 @@
+#!/bin/bash
+
+# pega o primeiro comando passado para usar no case
+command_name=$1
+
+# define a pasta padrão para os reports do rubycritic
+rubycritic_dir="reports/"
+
+# funcao que executa o argumento passado no container web
+# e depois o remove
+run_in_container(){
+  docker-compose run --rm web $@
+}
+
+# testa a opcao informada contra cada um de seus cases
+case "$command_name" in
+  add_scripts)
+    .scripts/add_alias.sh
+    ;;
+  bash)
+    run_in_container bash
+    ;;
+  console)
+    run_in_container bundle exec rails console
+    ;;
+  rubocop)
+    run_in_container rubocop ${@:2}
+    ;;
+  rubycritic)
+    mkdir -p -- "$rubycritic_dir"
+    run_in_container rubycritic -p $rubycritic_dir
+    ;;
+  rspec)
+    run_in_container bundle exec rspec ${@:2}
+    ;;
+  setup)
+    docker-compose build --no-cache
+    run_in_container bundle exec rake db:setup
+    .scripts/add_alias.sh
+    ;;
+  start)
+    docker-compose up
+    ;;
+  stop)
+    docker-compose stop
+    ;;
+  *)
+    echo "Esse script roda alguns comandos para nós grandes demais"
+    echo "Modo de uso: farmers <opção> <argumentos>"
+    echo
+    echo "Opções disponíveis:"
+    echo
+    echo "add_scripts: adiciona a pasta de scripts ao PATH"
+    echo "bash: abre um terminal bash"
+    echo "console: rails console"
+    echo "rubocop: executa o rubocop"
+    echo "rubycritic: executa o rubycritic e guarda os relatórios em reports/"
+    echo "rspec: executa o rspec"
+    echo "setup: refaz imagem e bd"
+    echo "start: inicia os containeres"
+    echo "stop: para os containeres"
+    ;;
+esac
