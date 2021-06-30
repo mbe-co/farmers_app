@@ -4,5 +4,7 @@ class Customer < ApplicationRecord
 
   validates :name, presence: true
   enum status: [:active, :inactive, :blocked]
-  enum authorization: [:regular, :admin, :operator] 
+  enum authorization: [:regular, :admin, :operator]
+
+  has_one :address
 end
