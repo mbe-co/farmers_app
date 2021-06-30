@@ -11,10 +11,49 @@ calculará quanto cada cliente deverá pagar.
 
 ## Instalação
 
-É necessário possuir apenas o `docker` e `docker-compose` instalados. Uma vez que
-o seu sistema satisfaz essas dependências, basta clonar o projeto, entrar no
-diretório principal e rodar do seu terminal `.scripts/farmers setup`.
+É necessário possuir apenas o `docker` e `docker-compose` instalados.
+```bash
+docker -v
+# Docker version 20.10.7, build f0df350
+
+docker-compose -v
+# docker-compose version 1.28.5, build c4eb3a1f
+```
+Uma vez que o seu sistema satisfaz essas dependências, basta clonar o projeto,
+entrar no diretório principal `farmers_app` e rodar no terminal
+`./scripts/farmers setup`.
+Este script montará a imagem docker, construirá o serviço de banco de dados e
+fará o setup inicial do projeto.
+
+```bash
+cd farmers_app
+./scripts/farmers setup
+```
 
 O projeto possui um script para facilitar o uso de alguns comandos mais usados.
-Assim que finalizar o setup, execute `farmers` em seu terminal e veja a lista de
-opções disponíveis.
+
+Para verificar as opções disponíveis execute `./scripts/farmers` em seu terminal.
+```bash
+Esse script simplifica alguns comandos
+Modo de uso: farmers <opção> <argumentos>
+
+Opções disponíveis:
+
+add_scripts: adiciona a pasta de scripts ao PATH com o alias 'farmers'
+bash: abre um terminal bash
+console: rails console
+rubocop: executa o rubocop
+rubycritic: executa o rubycritic e guarda os relatórios em reports/
+rspec: executa o rspec
+setup: refaz imagem e bd
+start: inicia os containeres
+stop: para os containeres
+```
+
+Caso deseje adicionar o alias `farmers` ao seu arquivo de configuração do shell,
+utilize a primeira opção, e logo após reinicie o shell:
+
+```bash
+./scripts/farmers add_scripts
+source ~/.bashrc # exemplo utilizando o bash
+```
