@@ -15,7 +15,7 @@ run_in_container(){
 # testa a opcao informada contra cada um de seus cases
 case "$command_name" in
   add_scripts)
-    .scripts/add_alias.sh
+    ./scripts/add_alias.sh
     ;;
   bash)
     run_in_container bash
@@ -35,8 +35,8 @@ case "$command_name" in
     ;;
   setup)
     docker-compose build --no-cache
-    run_in_container bundle exec rake db:setup
-    .scripts/add_alias.sh
+    run_in_container bundle exec bin/setup
+    docker-compose rm -f -s
     ;;
   start)
     docker-compose up
@@ -45,12 +45,12 @@ case "$command_name" in
     docker-compose stop
     ;;
   *)
-    echo "Esse script roda alguns comandos para nós grandes demais"
+    echo "Esse script simplifica alguns comandos"
     echo "Modo de uso: farmers <opção> <argumentos>"
     echo
     echo "Opções disponíveis:"
     echo
-    echo "add_scripts: adiciona a pasta de scripts ao PATH"
+    echo "add_scripts: adiciona a pasta de scripts ao PATH com o alias 'farmers'"
     echo "bash: abre um terminal bash"
     echo "console: rails console"
     echo "rubocop: executa o rubocop"
