@@ -41,10 +41,15 @@ Opções disponíveis:
 
 add_scripts: adiciona a pasta de scripts ao PATH com o alias 'farmers'
 bash: abre um terminal bash
+bin-setup: executa bin/setup
+bundle <args>: executa o comando passado com bundle exec dentro do container
 console: rails console
+db:migrate: executa db:migrate
+db:prepare: executa db:prepare
 rubocop: executa o rubocop
 rubycritic: executa o rubycritic e guarda os relatórios em reports/
-rspec: executa o rspec
+run <args>: executa o comando passado dentro do container web
+rspec <args>: executa o rspec
 setup: refaz imagem e bd
 start: inicia os containeres
 stop: para os containeres
