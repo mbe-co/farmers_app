@@ -16,3 +16,7 @@ Style/FrozenStringLiteralComment:
 
 Metrics/BlockLength:
   IgnoredMethods: ['describe', 'context', 'feature', 'scenario', 'let']
+
+Style/SymbolArray:
+  Enabled: true
+  EnforcedStyle: brackets

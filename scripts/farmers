@@ -20,8 +20,20 @@ case "$command_name" in
   bash)
     run_in_container bash
     ;;
+  bin-setup)
+    run_in_container bundle exec bin/setup
+    ;;
+  bundle)
+    run_in_container bundle exec ${@:2}
+    ;;
   console)
     run_in_container bundle exec rails console
+    ;;
+  db:migrate)
+    run_in_container bundle exec rails db:migrate
+    ;;
+  db:prepare)
+    run_in_container bundle exec rails db:prepare
     ;;
   rubocop)
     run_in_container rubocop ${@:2}
@@ -30,13 +42,15 @@ case "$command_name" in
     mkdir -p -- "$rubycritic_dir"
     run_in_container rubycritic -p $rubycritic_dir
     ;;
+  run)
+    run_in_container ${@:2}
+    ;;
   rspec)
     run_in_container bundle exec rspec ${@:2}
     ;;
   setup)
     docker-compose build --no-cache
     run_in_container bundle exec bin/setup
-    docker-compose rm -f -s
     ;;
   start)
     docker-compose up
@@ -52,10 +66,15 @@ case "$command_name" in
     echo
     echo "add_scripts: adiciona a pasta de scripts ao PATH com o alias 'farmers'"
     echo "bash: abre um terminal bash"
+    echo "bin-setup: executa bin/setup"
+    echo "bundle <args>: executa o comando passado com bundle exec dentro do container"
     echo "console: rails console"
+    echo "db:migrate: executa db:migrate"
+    echo "db:prepare: executa db:prepare"
     echo "rubocop: executa o rubocop"
     echo "rubycritic: executa o rubycritic e guarda os relatórios em reports/"
-    echo "rspec: executa o rspec"
+    echo "run <args>: executa o comando passado dentro do container web"
+    echo "rspec <args>: executa o rspec"
     echo "setup: refaz imagem e bd"
     echo "start: inicia os containeres"
     echo "stop: para os containeres"
