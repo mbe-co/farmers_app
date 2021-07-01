@@ -15,8 +15,13 @@ gem 'webpacker', '~> 5.0'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'factory_bot'
+  gem 'ffaker'
   gem 'pry'
+  gem 'rubocop', '~> 1.17', require: false
+  gem 'rubycritic', require: false
   gem 'rspec-rails'
+  gem 'shoulda-matchers', '~> 4.0'
 end
 
 group :development do
@@ -28,9 +33,6 @@ end
 
 group :test do
   gem 'capybara', '>= 3.26'
-  gem 'factory_bot'
-  gem 'rubocop', '~> 1.17', require: false
-  gem 'rubycritic', require: false
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
