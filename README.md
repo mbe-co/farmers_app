@@ -23,7 +23,8 @@ Uma vez que o seu sistema satisfaz essas dependências, basta clonar o projeto,
 entrar no diretório principal `farmers_app` e rodar no terminal
 `./scripts/farmers setup`.
 Este script montará a imagem docker, construirá o serviço de banco de dados e
-fará o setup inicial do projeto.
+fará o setup inicial do projeto. Utilize-o também sempre que adicionar alguma `gem`
+ao projeto, para remontar a imagem com a nova dependência.
 
 ```bash
 cd farmers_app
