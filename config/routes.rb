@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
-  root to: 'pages#index'
-  devise_for :customers
+  scope "(:locale)", :locale => /pt-BR|en|fr|es/ do
+    root to: 'pages#index'
+    devise_for :customers
+  end
 end
