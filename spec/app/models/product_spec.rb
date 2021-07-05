@@ -10,8 +10,8 @@ RSpec.describe Product, type: :model do
     it { is_expected.to validate_uniqueness_of(:name) }
     it { is_expected.to have_db_index(:name) }
     it do
-      is_expected.to define_enum_for(:status).
-        with_values([:active, :inactive])
+      is_expected.to define_enum_for(:status)
+        .with_values([:active, :inactive])
     end
   end
 end

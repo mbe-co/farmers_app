@@ -18,9 +18,9 @@ group :development, :test do
   gem 'factory_bot'
   gem 'ffaker'
   gem 'pry'
+  gem 'rspec-rails'
   gem 'rubocop', '~> 1.17', require: false
   gem 'rubycritic', require: false
-  gem 'rspec-rails'
   gem 'shoulda-matchers', '~> 4.0'
 end
 
