@@ -15,12 +15,21 @@
           <li class="nav-item mx-1">
             <%= link_to 'fazer feira', root_path, class: 'nav-link active' %>
           </li>
+          <% if customer_signed_in? %> 
+            <li class="nav-item mx-1">
+              <%= link_to 'lista da feira', root_path, class: 'nav-link active' %>
+            </li>
+            <li class="nav-item mx-1">
+              <%= link_to 'meu perfil', root_path, class: 'nav-link active' %>
+            </li>
           <li class="nav-item mx-1">
-            <%= link_to 'lista da feira', root_path, class: 'nav-link active' %>
+            <%= link_to 'logout', destroy_customer_session_path, method: :delete, class: 'nav-link active' %>
           </li>
+          <% else %>
           <li class="nav-item mx-1">
-            <%= link_to 'login', root_path, class: 'nav-link active' %>
+            <%= link_to 'login', new_customer_session_path, class: 'nav-link active' %>
           </li>
+          <% end %>
         </ul>
       </div>
     </div>
