@@ -31,6 +31,19 @@ cd farmers_app
 ./scripts/farmers setup
 ```
 
+**Caso sua intenção seja utilizar o sistema como usuário:**
+Basta subir os containeres e acessar em seu navegador `http://0.0.0.0:3000`
+```bash
+docker-compose up
+```
+Utilize a conta criada para teste, com as credenciais:
+```
+email: contateste@mail.com.br
+senha: 123456
+```
+
+**Caso deseje desenvolver / contribuir com o projeto:**
+
 O projeto possui um script para facilitar o uso de alguns comandos mais usados.
 
 Para verificar as opções disponíveis execute `./scripts/farmers` em seu terminal.
