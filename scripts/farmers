@@ -53,6 +53,7 @@ case "$command_name" in
     run_in_container bundle exec bin/setup
     ;;
   start)
+    run_in_container bundle exec rails db:prepare
     docker-compose up
     ;;
   stop)

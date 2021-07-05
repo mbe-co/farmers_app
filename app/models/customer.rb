@@ -3,7 +3,8 @@ class Customer < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates :email, :name, presence: true
-  validates :phone, numericality: { only_integer: true }
+  validates :phone, numericality: { only_integer: true },
+                    allow_nil: true
 
   enum status: [:active, :inactive, :blocked]
 
