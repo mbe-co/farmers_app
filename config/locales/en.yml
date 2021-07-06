@@ -11,6 +11,10 @@ en:
     no_register: There is no record
   btn:
     create: Create
+    edit: Edit
+    delete: Delete
+    new: New
+    back: Back
   activerecord:
     errors:
       messages:
@@ -19,7 +23,9 @@ en:
           has_one: Cannot delete record because a dependent %{record} exists
           has_many: Cannot delete record because dependent %{record} exist
     models: 
-      category: Category
+      category: 
+        one: Category
+        other: Categories
     attributes:
       category:
         name: name

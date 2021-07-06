@@ -11,6 +11,10 @@ fr:
     no_register: Il n'y a pas des registres
   btn:
     create: Créer
+    edit: Éditer
+    delete: Effacer
+    new: Nouveau
+    back: Revenir
   activerecord:
     errors:
       messages:
@@ -21,7 +25,9 @@ fr:
           has_many: Vous ne pouvez pas supprimer l'enregistrement parce que les %{record}
             dépendants existent
     models: 
-      category: Catégorie
+      category: 
+        one: Catégorie
+        other: Catégories
     attributes:
       category:
         name: nom

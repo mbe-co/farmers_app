@@ -12,6 +12,10 @@ es:
     no_register: No hay registros
   btn:
     create: Crear
+    edit: Editar
+    delete: Eliminar
+    new: Nuevo
+    back: Vuelve
   activerecord:
     errors:
       messages:
@@ -20,7 +24,9 @@ es:
           has_one: No se puede eliminar el registro porque existe un %{record} dependiente
           has_many: No se puede eliminar el registro porque existen %{record} dependientes
     models: 
-      category: Categoría
+      category: 
+        one: Categoría
+        other: Categorías
     attributes:
       category:
         name: nombre
