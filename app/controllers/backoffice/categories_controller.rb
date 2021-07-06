@@ -16,6 +16,7 @@ module Backoffice
         render :new
       end
     end
+
     def edit
     end
 
@@ -25,7 +26,6 @@ module Backoffice
     def destroy
     end
 
-    end
     private
 
       def set_category
