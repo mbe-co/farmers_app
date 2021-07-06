@@ -1,0 +1,8 @@
+<% if @category.errors.any? %>
+  <ul>
+    <% @category.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+<%= render partial: 'form', locals: { category: @category, btn_label: t('btn.create') } %>

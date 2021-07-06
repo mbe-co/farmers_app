@@ -1,0 +1,7 @@
+<div class= "fluid-container">
+  <%= form_with model: [:backoffice, category] do |form| %>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+    <%= form.submit btn_label %>
+  <% end %>
+</div>

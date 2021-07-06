@@ -1,0 +1,11 @@
+<h1> Categorias </h1>
+<p><%= puts "#{@categories}"%>
+<% if @categories.present? %>
+  <ul>
+    <% @categories.each do |category| %>
+      <li><%= category.name %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <%= t('messages.no_register')%>
+<% end %>
