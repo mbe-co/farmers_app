@@ -1,5 +1,6 @@
 module Backoffice
   class CategoriesController < ApplicationController
+    before_action :set_category, only: [:edit, :update, :destroy]
     def index
       @categories = Category.all
     end
@@ -21,9 +22,16 @@ module Backoffice
     end
 
     def update
+      if @category.update(category_params)
+        redirect_to backoffice_categories_path
+      else
+        render :edit
+      end
     end
 
     def destroy
+      @category.delete
+      redirect_to backoffice_categories_path
     end
 
     private

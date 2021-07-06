@@ -11,6 +11,10 @@ pt-BR:
     no_register: Não há registros
   btn:
     create: Criar
+    edit: Editar
+    delete: Deletar
+    new: Novo
+    back: Voltar
   activerecord:
     errors:
       messages:
@@ -19,7 +23,9 @@ pt-BR:
           has_one: Não é possível excluir o registro pois existe um %{record} dependente
           has_many: Não é possível excluir o registro pois existem %{record} dependentes
     models: 
-      category: Categoria
+      category: 
+        one: Categoria
+        other: Categorias
     attributes:
       category:
         name: nome
