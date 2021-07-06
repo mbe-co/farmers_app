@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     devise_for :customers
     namespace :backoffice do
       resources :categories, except: [:show]
+      get '/home', to: 'home#index'
     end
   end
 end
