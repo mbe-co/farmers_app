@@ -1,2 +1,9 @@
 es:
   welcome: "Bienvenida!"
+  menu:
+    about: "acerca de"
+    cart: "bolsa de la compra"
+    choose_products: "elegir productos"
+    login: "acceso"
+    logout: "cerrar sesión"
+    my_profile: "mi perfil"

@@ -1,2 +1,9 @@
 pt-BR:
   welcome: "Boas Vindas!"
+  menu:
+    about: "sobre"
+    cart: "sacola de compras"
+    choose_products: "escolher produtos"
+    login: "entrar"
+    logout: "sair"
+    my_profile: "meu perfil"

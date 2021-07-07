@@ -1,2 +1,9 @@
 fr:
   welcome: "Bienvenue!"
+  menu:
+    about: "qui sommes-nous"
+    cart: "sac de courses"
+    choose_products: "choisir des produits"
+    login: "login"
+    logout: "se déconnecter"
+    my_profile: "mon profil"
