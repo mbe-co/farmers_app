@@ -7,3 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 Customer.create!(email: 'contateste@mail.com.br', password: '123456',
                 name: 'Conta teste')
+
+user = User.new(email: 'admin@mail.com.br', password: '123456', name: 'Admin')
+user.skip_confirmation!
+user.save!
