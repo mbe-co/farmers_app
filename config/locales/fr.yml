@@ -16,6 +16,7 @@ fr:
     delete: Effacer
     new: Nouveau
     back: Revenir
+    employees_login: "employé? connexion"
   activerecord:
     errors:
       messages:

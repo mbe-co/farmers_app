@@ -17,6 +17,7 @@ es:
     delete: Eliminar
     new: Nuevo
     back: Vuelve
+    employees_login: "¿empleado? acceso"
   activerecord:
     errors:
       messages:
