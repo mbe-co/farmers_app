@@ -16,6 +16,7 @@ pt-BR:
     delete: Deletar
     new: Novo
     back: Voltar
+    employees_login: "Funcionário? Faça login"
   activerecord:
     errors:
       messages:
