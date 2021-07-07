@@ -25,6 +25,10 @@
           <li class="nav-item mx-1">
             <%= link_to t('menu.logout'), destroy_customer_session_path, method: :delete, class: 'nav-link active' %>
           </li>
+          <% elsif user_signed_in? %>
+          <li>
+            <%= link_to 'logout', destroy_user_session_path, method: :delete, class: 'nav-link active' %>
+          </li>
           <% else %>
           <li class="nav-item mx-1">
             <%= link_to t('menu.login'), new_customer_session_path, class: 'nav-link active' %>
