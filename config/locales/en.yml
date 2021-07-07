@@ -16,7 +16,7 @@ en:
     delete: Delete
     new: New
     back: Back
-    employees_login: "Employee? Login"
+    employees_login: "employee? login"
   activerecord:
     errors:
       messages:
