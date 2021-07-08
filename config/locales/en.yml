@@ -7,6 +7,7 @@ en:
     login: "login"
     logout: "logout"
     my_profile: "my profile"
+    backoffice: backoffice
   messages:
     no_register: There is no record
     delete_confirmation: Are you sure you want to delete?

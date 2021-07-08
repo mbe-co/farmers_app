@@ -7,6 +7,7 @@ fr:
     login: "login"
     logout: "se déconnecter"
     my_profile: "mon profil"
+    backoffice: backoffice
   messages:
     no_register: Il n'y a pas des registres
     delete_confirmation: Êtes-vous sûr que vous voulez supprimer?

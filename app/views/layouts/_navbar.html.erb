@@ -26,8 +26,11 @@
             <%= link_to t('menu.logout'), destroy_customer_session_path, method: :delete, class: 'nav-link active' %>
           </li>
           <% elsif user_signed_in? %>
+              <% if current_user.admin? %>
+              <%= link_to t('menu.backoffice'), backoffice_home_path, class: 'nav-link active' %>
+              <% end %>
           <li>
-            <%= link_to 'logout', destroy_user_session_path, method: :delete, class: 'nav-link active' %>
+            <%= link_to t('menu.logout'), destroy_user_session_path, method: :delete, class: 'nav-link active' %>
           </li>
           <% else %>
           <li class="nav-item mx-1">
