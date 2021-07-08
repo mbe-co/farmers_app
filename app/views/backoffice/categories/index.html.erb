@@ -6,7 +6,7 @@
         <tr>
           <td><%= category.name %></td>
           <td><%= link_to t('btn.edit'), edit_backoffice_category_path(category) %></td>
-          <td><%= link_to t('btn.delete'), backoffice_category_path(category), method: :delete %></td>
+          <td><%= link_to t('btn.delete'), backoffice_category_path(category), method: :delete, data: { confirm: t('messages.delete_confirmation') } %></td>
         </tr>
       <% end %>
     </table>

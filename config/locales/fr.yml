@@ -9,6 +9,7 @@ fr:
     my_profile: "mon profil"
   messages:
     no_register: Il n'y a pas des registres
+    delete_confirmation: Êtes-vous sûr que vous voulez supprimer?
   btn:
     create: Créer
     edit: Éditer
