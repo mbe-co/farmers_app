@@ -11,6 +11,9 @@ module Backoffice
 
     def create
       @category = Category.new(category_params)
+      if @category.valid?
+        @category.name.downcase!
+      end
       if @category.save
         redirect_to backoffice_categories_path
       else
@@ -30,7 +33,7 @@ module Backoffice
     end
 
     def destroy
-      @category.delete
+      @category.destroy
       redirect_to backoffice_categories_path
     end
 
