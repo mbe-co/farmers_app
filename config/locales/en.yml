@@ -9,6 +9,7 @@ en:
     my_profile: "my profile"
   messages:
     no_register: There is no record
+    delete_confirmation: Are you sure you want to delete?
   btn:
     create: Create
     edit: Edit

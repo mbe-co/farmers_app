@@ -10,6 +10,7 @@ es:
   welcome: "¡Bienvenida!"
   messages:
     no_register: No hay registros
+    delete_confirmation: ¿Estás segura de que quieres eliminar?
   btn:
     create: Crear
     edit: Editar

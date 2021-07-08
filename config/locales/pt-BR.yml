@@ -9,6 +9,7 @@ pt-BR:
     my_profile: "meu perfil"
   messages:
     no_register: Não há registros
+    delete_confirmation: Tem certeza que deseja deletar?
   btn:
     create: Criar
     edit: Editar
