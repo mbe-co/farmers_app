@@ -17,7 +17,7 @@
         <tr>
           <th scope="row"><%= product.name %></th>
           <td><%= product.category.name %></td>
-          <td><%= Product.human_attribute_name("status.#{product.status}") %></td>
+          <td><%= product.status_name %></td>
         </tr>
       <% end %>
     </tbody>
