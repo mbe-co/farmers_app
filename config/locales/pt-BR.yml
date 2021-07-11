@@ -9,6 +9,7 @@ pt-BR:
     my_profile: "meu perfil"
   messages:
     no_register: Não há registros
+    not_authorized: Não autorizado
     delete_confirmation: Tem certeza que deseja deletar?
   btn:
     create: Criar
@@ -28,8 +29,22 @@ pt-BR:
       category: 
         one: Categoria
         other: Categorias
+      product:
+        one: Produto
+        other: Produtos
     attributes:
       category:
+        name: nome
+      product:
+        name: nome
+        category: categoria
+        status: status
+      product/status:
+        active: ativo
+        inactive: desativado
+      user:
+        email: email
+        password: senha
         name: nome
   date:
     abbr_day_names:

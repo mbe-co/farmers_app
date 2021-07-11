@@ -9,6 +9,7 @@ en:
     my_profile: "my profile"
   messages:
     no_register: There is no record
+    not_authorized: Not authorized
     delete_confirmation: Are you sure you want to delete?
   btn:
     create: Create
@@ -28,8 +29,22 @@ en:
       category: 
         one: Category
         other: Categories
+      product:
+        one: Product
+        other: Products
     attributes:
       category:
+        name: name
+      product:
+        name: name
+        category: category
+        status: status
+      product/status:
+        active: active
+        inactive: inactive
+      user:
+        email: email
+        password: password
         name: name
   date:
     abbr_day_names:
