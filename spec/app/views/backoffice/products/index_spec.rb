@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature 'admin views list of registered products' do
+feature 'products listing' do
   let!(:admin)    { create(:user, name: 'Admin', role: :admin) }
   let!(:employee) { create(:user, role: :operator) }
   let!(:customer) { create(:customer, name: 'Customer') }
@@ -11,7 +11,7 @@ feature 'admin views list of registered products' do
     it 'views a link to register a new product' do
       visit backoffice_products_path
 
-      expect(page).to have_link(I18n.t('btn.create'))
+      expect(page).to have_link(I18n.t('btn.new'))
     end
 
     it 'views a message when no products registered' do

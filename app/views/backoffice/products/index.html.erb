@@ -1,7 +1,7 @@
 <h1> <%= Product.model_name.human(count: Product.count) %> </h1>
 
 <section class="col-sm-6 offset-1">
-  <%= link_to t('btn.create'), new_backoffice_product_path, class: "btn btn-secondary" %>
+  <%= link_to t('btn.new'), new_backoffice_product_path, class: "btn btn-secondary" %>
   <hr>
   <% if @products.present? %>
   <table class="table table-striped">
