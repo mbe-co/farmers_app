@@ -9,6 +9,7 @@ fr:
     my_profile: "mon profil"
   messages:
     no_register: Il n'y a pas des registres
+    not_authorized: Pas autorisé
     delete_confirmation: Êtes-vous sûr que vous voulez supprimer?
   btn:
     create: Créer
@@ -30,8 +31,22 @@ fr:
       category: 
         one: Catégorie
         other: Catégories
+      product:
+        one: Produit
+        other: Des produits
     attributes:
       category:
+        name: nom
+      product:
+        name: nom
+        category: catégorie
+        status: statut
+      product/status:
+        active: actif
+        inactive: inactif
+      user:
+        email: email
+        password: le mot de passe
         name: nom
   date:
     abbr_day_names:

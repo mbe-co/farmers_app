@@ -1,0 +1,28 @@
+<h1> <%= Product.model_name.human(count: Product.count) %> </h1>
+
+<section class="col-sm-6 offset-1">
+  <%= link_to t('btn.create'), new_backoffice_product_path, class: "btn btn-secondary" %>
+  <hr>
+  <% if @products.present? %>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col"><%= Product.human_attribute_name('name') %></th>
+        <th scope="col"><%= Product.human_attribute_name('category') %></th>
+        <th scope="col"><%= Product.human_attribute_name('status') %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @products.each do |product| %>
+        <tr>
+          <th scope="row"><%= product.name %></th>
+          <td><%= product.category.name %></td>
+          <td><%= Product.human_attribute_name("status.#{product.status}") %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</section>
+<% else %>
+  <h4><%= t('messages.no_register') %></h4>
+<% end %>
