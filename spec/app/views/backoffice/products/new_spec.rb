@@ -36,4 +36,35 @@ feature 'products register' do
       expect(Product.last.name).to eq('banana')
     end
   end
+
+  context 'validations' do
+    include_context 'when admin authenticated'
+
+    it 'can not be blank' do
+      create(:category)
+
+      visit new_backoffice_product_path
+
+      click_on I18n.t('btn.create')
+
+      expect(page).to have_content(I18n.t('errors.messages.blank'))
+    end
+
+    it 'name is unique' do
+      create(:product, name: 'banana')
+
+      visit new_backoffice_product_path
+
+      fill_in I18n.t('activerecord.attributes.product.name'), with: 'banana'
+      click_on I18n.t('btn.create')
+
+      expect(page).to have_content(I18n.t('errors.messages.taken'))
+    end
+
+    it 'have to register a category if there are none' do
+      visit new_backoffice_product_path
+
+      expect(page).to have_link(I18n.t('messages.category_necessary'))
+    end
+  end
 end

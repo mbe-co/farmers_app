@@ -21,6 +21,8 @@ module Backoffice
       if @product.save
         redirect_to backoffice_products_path, notice: t('messages.success_on_create')
       else
+        list_categories
+        list_statuses
         render :new
       end
     end

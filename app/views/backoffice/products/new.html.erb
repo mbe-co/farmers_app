@@ -4,6 +4,11 @@
   <%= link_to t('btn.back'), backoffice_products_path, class: "btn btn-secondary" %>
   <hr>
 
-  <%= render partial: 'form',
-    locals: { product: @product, categories: @categories, statuses: @statuses} %>
+  <% if @categories.present? %>
+    <%= render partial: 'form',
+      locals: { product: @product, categories: @categories, statuses: @statuses} %>
+  <% else %>
+    <%= link_to t('messages.category_necessary'), new_backoffice_category_path,
+      class: "btn btn-secondary" %>
+  <% end %>
 </section>
