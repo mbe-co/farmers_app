@@ -10,14 +10,18 @@
         <th scope="col"><%= Product.human_attribute_name('name') %></th>
         <th scope="col"><%= Product.human_attribute_name('category') %></th>
         <th scope="col"><%= Product.human_attribute_name('status') %></th>
+        <th scope="col"><%= t('btn.delete') %></th>
       </tr>
     </thead>
     <tbody>
       <% @products.each do |product| %>
         <tr>
-          <th scope="row"><%= product.name %></th>
+          <th scope="row"><%= link_to product.name,
+            edit_backoffice_product_path(id: product.id) %></th>
           <td><%= product.category.name %></td>
           <td><%= product.status_name %></td>
+          <td><%= link_to 'X', backoffice_products_path, method: :delete,
+            class: "btn btn-light" %></td>
         </tr>
       <% end %>
     </tbody>

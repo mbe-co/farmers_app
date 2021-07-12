@@ -22,7 +22,7 @@ feature 'products listing' do
 
     it 'views a table of products when products registered' do
       category = create(:category)
-      products = create_list(:product, 3, category: category, status: :active)
+      products = create_list(:product, 3, category: category)
 
       visit backoffice_products_path
 
@@ -32,6 +32,17 @@ feature 'products listing' do
       expect(page).to have_content(products.second.category.name)
       expect(page).to have_content(products.third.name)
       expect(page).to have_content(products.third.category.name)
+    end
+
+    it 'views edit and delete buttons' do
+      category = create(:category)
+      product = create(:product, category: category)
+
+      visit backoffice_products_path
+
+      expect(page).to have_link(product.name,
+        href: edit_backoffice_product_path(product))
+      expect(page).to have_link('X')
     end
   end
 
