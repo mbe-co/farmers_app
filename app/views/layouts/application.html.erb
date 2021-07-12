@@ -15,10 +15,10 @@
     <div style="min-height: 95vh">
       <%= render 'layouts/navbar' %>
       <% if flash[:notice] %>
-        <p class="notice"><%= notice %></p>
+        <p class="alert alert-light"><%= notice %></p>
       <% end %>
       <% if flash[:alert] %>
-        <p class="alert"><%= alert %></p>
+        <p class="alert alert-dark"><%= alert %></p>
       <% end %>
       <%= yield %>
     </div>

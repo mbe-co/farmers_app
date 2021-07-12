@@ -3,6 +3,8 @@ module Backoffice
     include AdminsOnly
 
     before_action :find_category, only: [:create]
+    before_action :list_categories, only: [:new]
+    before_action :list_statuses, only: [:new]
 
     def index
       @products = Product.all
@@ -33,6 +35,14 @@ module Backoffice
 
     def find_category
       @category = Category.find(params.dig(:product, :category))
+    end
+
+    def list_categories
+      @categories = Category.all
+    end
+
+    def list_statuses
+      @statuses = Product.statuses
     end
   end
 end
