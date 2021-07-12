@@ -11,6 +11,7 @@ en:
     no_register: There is no record
     not_authorized: Not authorized
     delete_confirmation: Are you sure you want to delete?
+    success_on_create: "Successfully created"
   btn:
     create: Create
     edit: Edit

@@ -11,6 +11,7 @@ pt-BR:
     no_register: Não há registros
     not_authorized: Não autorizado
     delete_confirmation: Tem certeza que deseja deletar?
+    success_on_create: "Criado com sucesso"
   btn:
     create: Criar
     edit: Editar
