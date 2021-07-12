@@ -14,6 +14,7 @@ module Backoffice
 
     def create
       @product = @category.products.build(product_params)
+      @product.sanitize_name
 
       if @product.save
         redirect_to backoffice_products_path, notice: t('messages.success_on_create')
