@@ -9,4 +9,8 @@ class Product < ApplicationRecord
   def status_name
     Product.human_attribute_name("status.#{status}")
   end
+
+  def sanitize_name
+    name.downcase!
+  end
 end
