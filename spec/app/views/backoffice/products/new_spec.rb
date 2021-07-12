@@ -2,6 +2,8 @@ require 'rails_helper'
 
 feature 'products register' do
   let!(:admin) { create(:user, name: 'Admin', role: :admin) }
+  let!(:employee) { create(:user, role: :operator) }
+  let!(:customer) { create(:customer, name: 'Customer') }
 
   context 'when admin' do
     include_context 'when admin authenticated'
@@ -65,6 +67,25 @@ feature 'products register' do
       visit new_backoffice_product_path
 
       expect(page).to have_link(I18n.t('messages.category_necessary'))
+    end
+  end
+
+  context 'when employee' do
+    include_context 'when employee authenticated'
+
+    it 'views not authorized message' do
+      visit new_backoffice_product_path
+
+      expect(page).to have_content(I18n.t('messages.not_authorized'))
+    end
+  end
+
+  context 'when customer' do
+    it 'views not authorized message' do
+      login_as customer
+      visit new_backoffice_product_path
+
+      expect(page).to have_content(I18n.t('messages.not_authorized'))
     end
   end
 end

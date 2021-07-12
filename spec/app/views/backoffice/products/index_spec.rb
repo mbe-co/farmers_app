@@ -1,4 +1,4 @@
-require "rails_helper"
+require 'rails_helper'
 
 feature 'products listing' do
   let!(:admin)    { create(:user, name: 'Admin', role: :admin) }
