@@ -1,0 +1,35 @@
+<h1> <%= Product.model_name.human %> </h1>
+
+<section class="col-sm-6 offset-1">
+  <%= link_to t('btn.back'), backoffice_products_path, class: "btn btn-secondary" %>
+  <hr>
+
+<%= form_with model: [:backoffice, @product], method: :post do |form| %>
+
+  <div class="mb-3">
+    <%= form.label :category, class: "form-label" %>
+    <%= form.collection_select :category, Category.all, :id, :name,
+      { selected: Category.first }, { class: "categories-select" } %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :name, class: "form-label" %>
+    <%= form.text_field :name, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.collection_radio_buttons(
+      :status,
+      Product.statuses,
+      :first,
+      :first,
+      { checked: Product.statuses.first }) do |status| %>
+        <%= status.radio_button(class: "form-check-input") %>
+        <%= status.label(class: "form-check-label mx-1") %>
+      <% end %>
+  </div>
+
+  <%= form.submit %>
+
+<% end %>
+</section>
