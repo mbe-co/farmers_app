@@ -1,0 +1,9 @@
+<h1> <%= Product.model_name.human %> </h1>
+
+<section class="col-sm-6 offset-1">
+  <%= link_to t('btn.back'), backoffice_products_path, class: "btn btn-secondary" %>
+  <hr>
+  <%= render partial: 'form',
+    locals: { method: :patch, product: @product, categories: @categories,
+              statuses: @statuses } %>
+</section>

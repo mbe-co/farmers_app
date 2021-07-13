@@ -13,6 +13,7 @@ es:
     not_authorized: No autorizado
     delete_confirmation: ¿Estás segura de que quieres eliminar?
     success_on_create: Creado con éxito
+    success_on_edit: Cambiado exitosamente
     category_necessary: Primero, registre una categoría
   btn:
     create: Crear
