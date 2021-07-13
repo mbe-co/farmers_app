@@ -21,8 +21,7 @@ feature 'products listing' do
     end
 
     it 'views a table of products when products registered' do
-      category = create(:category)
-      products = create_list(:product, 3, category: category)
+      products = create_list(:product, 3)
 
       visit backoffice_products_path
 
@@ -35,8 +34,7 @@ feature 'products listing' do
     end
 
     it 'views edit and delete buttons' do
-      category = create(:category)
-      product = create(:product, category: category)
+      product = create(:product)
 
       visit backoffice_products_path
 
