@@ -12,6 +12,7 @@ en:
     not_authorized: Not authorized
     delete_confirmation: Are you sure you want to delete?
     success_on_create: Successfully created
+    success_on_edit: Successfully changed
     category_necessary: First, register a category
   btn:
     create: Create
