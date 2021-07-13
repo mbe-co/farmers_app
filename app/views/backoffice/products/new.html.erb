@@ -6,7 +6,8 @@
 
   <% if @categories.present? %>
     <%= render partial: 'form',
-      locals: { product: @product, categories: @categories, statuses: @statuses} %>
+      locals: { method: :post, product: @product, categories: @categories,
+                statuses: @statuses} %>
   <% else %>
     <%= link_to t('messages.category_necessary'), new_backoffice_category_path,
       class: "btn btn-secondary" %>

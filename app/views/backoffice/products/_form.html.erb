@@ -1,12 +1,12 @@
-<% if @product.errors.any? %>
-  <% @product.errors.full_messages.each do |message| %>
+<% if product.errors.any? %>
+  <% product.errors.full_messages.each do |message| %>
     <div class="alert alert-danger">
       <%= message %>
     </div>
   <% end %>
 <% end %>
 
-<%= form_with model: [:backoffice, product], method: :post do |form| %>
+<%= form_with model: [:backoffice, product], method: method do |form| %>
 
   <div class="mb-3">
     <%= form.label :category, class: "form-label" %>
