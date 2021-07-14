@@ -3,7 +3,7 @@ module Backoffice
     include AdminsOnly
 
     before_action :find_category, only: [:create, :update]
-    before_action :find_product, only: [:edit, :update]
+    before_action :find_product, only: [:edit, :update, :destroy]
     before_action :list_categories, only: [:new, :edit]
     before_action :list_statuses, only: [:new, :edit]
 
@@ -28,8 +28,7 @@ module Backoffice
       end
     end
 
-    def edit
-    end
+    def edit; end
 
     def update
       if @product.update(product_params.merge(category: @category))
@@ -39,6 +38,11 @@ module Backoffice
         list_statuses
         render :edit
       end
+    end
+
+    def destroy
+      @product.destroy
+      redirect_to backoffice_products_path, notice: t('messages.success_on_destroy')
     end
 
     private

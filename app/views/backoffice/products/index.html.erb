@@ -20,8 +20,8 @@
             edit_backoffice_product_path(id: product.id) %></th>
           <td><%= product.category.name %></td>
           <td><%= product.status_name %></td>
-          <td><%= link_to 'X', backoffice_products_path, method: :delete,
-            class: "btn btn-light" %></td>
+          <td><%= link_to 'X', backoffice_product_path(product), method: :delete,
+            data: { confirm: t('messages.delete_confirmation') }, class: "btn btn-light" %></td>
         </tr>
       <% end %>
     </tbody>
