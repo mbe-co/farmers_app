@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :product do
-    name { FFaker::Food.vegetable }
+    sequence(:name) { |n| "product#{n}" }
     category
   end
 end
