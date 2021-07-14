@@ -4,8 +4,8 @@ feature 'Products edition' do
   let(:admin)    { create(:user, name: 'Admin', role: :admin) }
   let(:employee) { create(:user, role: :operator) }
   let(:customer) { create(:customer, name: 'Customer') }
-  let(:category)  { create(:category, name: 'fruta') }
-  let(:product)   { create(:product, name: 'banana', category: category) }
+  let(:category) { create(:category, name: 'fruta') }
+  let(:product)  { create(:product, name: 'banana', category: category) }
 
   context 'when admin' do
     include_context 'when admin authenticated'
@@ -42,7 +42,7 @@ feature 'Products edition' do
 
       it 'name must be unique' do
         create(:category, name: 'hortaliça')
-        other_product = create(:product, name: 'alface')
+        create(:product, name: 'alface')
 
         visit edit_backoffice_product_path(product)
 

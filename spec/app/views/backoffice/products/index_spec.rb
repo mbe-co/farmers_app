@@ -39,7 +39,7 @@ feature 'products listing' do
       visit backoffice_products_path
 
       expect(page).to have_link(product.name,
-        href: edit_backoffice_product_path(product))
+                                href: edit_backoffice_product_path(product))
       expect(page).to have_link('X')
     end
   end
