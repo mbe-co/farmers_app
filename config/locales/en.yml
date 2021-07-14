@@ -13,6 +13,7 @@ en:
     delete_confirmation: Are you sure you want to delete?
     success_on_create: Successfully created
     success_on_edit: Successfully changed
+    success_on_destroy: Successfully removed
     category_necessary: First, register a category
   btn:
     create: Create
