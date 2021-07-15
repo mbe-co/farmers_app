@@ -1,0 +1,24 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark px-5 ">
+  <div class="container-fluid d-flex justify-content-between py-2">
+    <div>
+      <%= link_to 'FarmersMarketApp - backoffice', backoffice_home_path, class: 'navbar-brand text-secondary' %>
+    </div>
+    <div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <% if user_signed_in? %>
+            <li>
+              <%= link_to t(Category.model_name.human(count: 2)), backoffice_categories_path, class: 'nav-link active' %>
+            </li>
+            <li>
+              <%= link_to t('menu.logout'), destroy_user_session_path, method: :delete, class: 'nav-link active' %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>

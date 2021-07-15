@@ -13,7 +13,11 @@
 
   <body>
     <div style="min-height: 95vh">
-      <%= render 'layouts/navbar' %>
+      <% if user_signed_in? %>
+        <%= render 'layouts/navbar_bko' %>
+      <% else %>
+        <%= render 'layouts/navbar' %>
+      <% end %>
       <% if flash[:notice] %>
         <p class="notice"><%= notice %></p>
       <% end %>
