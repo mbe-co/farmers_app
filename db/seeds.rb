@@ -8,7 +8,4 @@
 Customer.create!(email: 'contateste@mail.com.br', password: '123456',
                 name: 'Conta teste')
 
-user = User.new(email: 'admin@mail.com.br', password: '123456', name: 'Admin')
-user.skip_confirmation!
-user.admin!
-user.save!
+User.create!(email: 'admin@mail.com.br', password: '123456', name: 'Admin', role: :admin)

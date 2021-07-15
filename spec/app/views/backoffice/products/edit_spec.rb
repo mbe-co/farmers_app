@@ -52,6 +52,15 @@ feature 'Products edition' do
 
         expect(page).to have_content(I18n.t('errors.messages.taken'))
       end
+
+      it 'sanitize name' do
+        visit edit_backoffice_product_path(product)
+
+        fill_in I18n.t('activerecord.attributes.product.name'), with: 'ALFACE'
+        click_on I18n.t('helpers.submit.update', model: Product.model_name.human)
+
+        expect(page).to have_content('alface')
+      end
     end
   end
 

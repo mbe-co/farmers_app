@@ -22,6 +22,7 @@ pt-BR:
     new: Novo
     back: Voltar
     employees_login: "funcionário? faça login"
+    list_categories: listar categorias
   activerecord:
     errors:
       messages:

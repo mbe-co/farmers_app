@@ -34,12 +34,11 @@ feature 'products listing' do
     end
 
     it 'views edit and delete buttons' do
-      product = create(:product)
+      create(:product)
 
       visit backoffice_products_path
 
-      expect(page).to have_link(product.name,
-                                href: edit_backoffice_product_path(product))
+      expect(page).to have_link('-')
       expect(page).to have_link('X')
     end
   end

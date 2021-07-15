@@ -22,6 +22,7 @@ fr:
     new: Nouveau
     back: Revenir
     employees_login: "employé? connexion"
+    list_categories: lister les catégories
   activerecord:
     errors:
       messages:
