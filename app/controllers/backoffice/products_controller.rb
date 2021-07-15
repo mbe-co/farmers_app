@@ -2,13 +2,12 @@ module Backoffice
   class ProductsController < ApplicationController
     include AdminsOnly
 
-    before_action :find_category, only: [:create, :update]
     before_action :find_product, only: [:edit, :update, :destroy]
     before_action :list_categories, only: [:new, :edit]
     before_action :list_statuses, only: [:new, :edit]
 
     def index
-      @products = Product.all
+      @products = Product.includes(:category).all
     end
 
     def new
@@ -16,8 +15,7 @@ module Backoffice
     end
 
     def create
-      @product = Product.new(product_params.merge(category: @category))
-      @product.sanitize_name
+      @product = Product.new(product_params)
 
       if @product.save
         redirect_to backoffice_products_path, notice: t('messages.success_on_create')
@@ -31,7 +29,7 @@ module Backoffice
     def edit; end
 
     def update
-      if @product.update(product_params.merge(category: @category))
+      if @product.update(product_params)
         redirect_to backoffice_products_path, notice: t('messages.success_on_edit')
       else
         list_categories
@@ -48,13 +46,7 @@ module Backoffice
     private
 
     def product_params
-      params.require(:product)
-            .permit(:name, :category, :status)
-            .except(:category)
-    end
-
-    def find_category
-      @category = Category.find(params.dig(:product, :category))
+      params.require(:product).permit(:name, :category_id, :status)
     end
 
     def find_product

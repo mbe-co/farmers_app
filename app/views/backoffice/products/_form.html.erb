@@ -10,7 +10,7 @@
 
   <div class="mb-3">
     <%= form.label :category, class: "form-label" %>
-    <%= form.collection_select :category, categories, :id, :name,
+    <%= form.collection_select :category_id, categories, :id, :name,
       { selected: categories.first } %>
   </div>
 

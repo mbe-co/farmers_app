@@ -23,6 +23,7 @@ es:
     new: Nuevo
     back: Vuelve
     employees_login: "¿empleado? acceso"
+    list_categories: enumerar categorías
   activerecord:
     errors:
       messages:

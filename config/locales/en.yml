@@ -22,6 +22,7 @@ en:
     new: New
     back: Back
     employees_login: "employee? login"
+    list_categories: list categories
   activerecord:
     errors:
       messages:
