@@ -11,6 +11,9 @@
         <ul class="navbar-nav">
           <% if user_signed_in? %>
             <li>
+              <%= link_to t(Product.model_name.human(count: 2)), backoffice_products_path, class: 'nav-link active' %>
+            </li>
+            <li>
               <%= link_to t(Category.model_name.human(count: 2)), backoffice_categories_path, class: 'nav-link active' %>
             </li>
             <li>
