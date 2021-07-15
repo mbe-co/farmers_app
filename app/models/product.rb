@@ -6,6 +6,8 @@ class Product < ApplicationRecord
 
   enum status: { active: 0, inactive: 1 }, _default: 0
 
+  before_save :sanitize_name
+
   def status_name
     Product.human_attribute_name("status.#{status}")
   end
