@@ -1,4 +1,4 @@
-<h1> <%= Category.model_name.human %> </h1>
+<h1> <%= Category.model_name.human(count: 2) %> </h1>
 <div><%= link_to t('btn.new'), new_backoffice_category_path%></div>
 <% if @categories.present? %>
     <table>
