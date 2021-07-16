@@ -52,6 +52,10 @@ en:
         email: email
         password: password
         name: name
+      customer:
+        email: email
+        password: password
+        name: name
   date:
     abbr_day_names:
     - Sun

@@ -53,6 +53,10 @@ es:
         email: email
         password: contraseña
         name: nombre
+      customer:
+        email: email
+        password: contraseña
+        name: nombre
   date:
     abbr_day_names:
     - dom

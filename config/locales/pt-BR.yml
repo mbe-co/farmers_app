@@ -52,6 +52,10 @@ pt-BR:
         email: email
         password: senha
         name: nome
+      customer:
+        email: email
+        password: senha
+        name: nome
   date:
     abbr_day_names:
     - dom
