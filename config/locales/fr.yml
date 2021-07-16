@@ -54,6 +54,10 @@ fr:
         email: email
         password: le mot de passe
         name: nom
+      customer:
+        email: email
+        password: le mot de passe
+        name: nom
   date:
     abbr_day_names:
     - dim
