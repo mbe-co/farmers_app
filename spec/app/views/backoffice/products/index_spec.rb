@@ -11,13 +11,19 @@ feature 'products listing' do
     it 'views a link to register a new product' do
       visit backoffice_products_path
 
-      expect(page).to have_link(I18n.t('btn.new'))
+      expect(page).to have_link('Novo')
+    end
+
+    it 'views a link to list all categories' do
+      visit backoffice_products_path
+
+      expect(page).to have_link('listar categorias')
     end
 
     it 'views a message when no products registered' do
       visit backoffice_products_path
 
-      expect(page).to have_content(I18n.t('messages.no_register'))
+      expect(page).to have_content('Não há registros')
     end
 
     it 'views a table of products when products registered' do
@@ -49,7 +55,7 @@ feature 'products listing' do
     it 'views not authorized message' do
       visit backoffice_products_path
 
-      expect(page).to have_content(I18n.t('messages.not_authorized'))
+      expect(page).to have_content('Não autorizado')
     end
   end
 
@@ -58,7 +64,7 @@ feature 'products listing' do
       login_as customer
       visit backoffice_products_path
 
-      expect(page).to have_content(I18n.t('messages.not_authorized'))
+      expect(page).to have_content('Não autorizado')
     end
   end
 end
