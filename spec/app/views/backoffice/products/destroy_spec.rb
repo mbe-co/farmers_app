@@ -13,8 +13,8 @@ feature 'Product deletion' do
 
       click_link 'X'
 
-      expect(page).to have_content(I18n.t('messages.success_on_destroy'))
-      expect(page).to have_content(I18n.t('messages.no_register'))
+      expect(page).to have_content('Removido com sucesso')
+      expect(page).to have_content('Não há registros')
     end
   end
 end

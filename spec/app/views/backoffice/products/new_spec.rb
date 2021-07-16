@@ -13,18 +13,18 @@ feature 'products register' do
 
       visit new_backoffice_product_path
 
-      fill_in I18n.t('activerecord.attributes.product.name'), with: 'fuit name'
-      click_on I18n.t('btn.create')
+      fill_in 'nome', with: 'fuit name'
+      click_on 'Criar Produto'
 
       expect(current_path).to match(backoffice_products_path)
-      expect(page).to have_content(I18n.t('messages.success_on_create'))
+      expect(page).to have_content('Criado com sucesso')
       expect(page).to have_content('fuit name')
     end
 
     it 'views a back button that returns to products index' do
       visit new_backoffice_product_path
 
-      expect(page).to have_link(I18n.t('btn.back'))
+      expect(page).to have_link('Voltar')
     end
 
     it 'downcase name of products' do
@@ -32,8 +32,8 @@ feature 'products register' do
 
       visit new_backoffice_product_path
 
-      fill_in I18n.t('activerecord.attributes.product.name'), with: 'Banana'
-      click_on I18n.t('btn.create')
+      fill_in 'nome', with: 'Banana'
+      click_on 'Criar Produto'
 
       expect(Product.last.name).to eq('banana')
     end
@@ -47,9 +47,9 @@ feature 'products register' do
 
       visit new_backoffice_product_path
 
-      click_on I18n.t('btn.create')
+      click_on 'Criar Produto'
 
-      expect(page).to have_content(I18n.t('errors.messages.blank'))
+      expect(page).to have_content('não pode ficar em branco')
     end
 
     it 'name is unique' do
@@ -57,16 +57,16 @@ feature 'products register' do
 
       visit new_backoffice_product_path
 
-      fill_in I18n.t('activerecord.attributes.product.name'), with: 'banana'
-      click_on I18n.t('btn.create')
+      fill_in 'nome', with: 'banana'
+      click_on 'Criar Produto'
 
-      expect(page).to have_content(I18n.t('errors.messages.taken'))
+      expect(page).to have_content('já está em uso')
     end
 
     it 'have to register a category if there are none' do
       visit new_backoffice_product_path
 
-      expect(page).to have_link(I18n.t('messages.category_necessary'))
+      expect(page).to have_link('Primeiro, cadastre uma categoria')
     end
   end
 
@@ -76,7 +76,7 @@ feature 'products register' do
     it 'views not authorized message' do
       visit new_backoffice_product_path
 
-      expect(page).to have_content(I18n.t('messages.not_authorized'))
+      expect(page).to have_content('Não autorizado')
     end
   end
 
@@ -85,7 +85,7 @@ feature 'products register' do
       login_as customer
       visit new_backoffice_product_path
 
-      expect(page).to have_content(I18n.t('messages.not_authorized'))
+      expect(page).to have_content('Não autorizado')
     end
   end
 end
