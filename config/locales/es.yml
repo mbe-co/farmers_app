@@ -39,6 +39,9 @@ es:
       product:
         one: Producto
         other: Productos
+      customer:
+        one: Cliente
+        other: Clientes
     attributes:
       category:
         name: nombre

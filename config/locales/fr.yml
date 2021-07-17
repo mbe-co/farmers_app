@@ -40,6 +40,9 @@ fr:
       product:
         one: Produit
         other: Des produits
+      customer:
+        one: Client
+        other: Les clients
     attributes:
       category:
         name: nom

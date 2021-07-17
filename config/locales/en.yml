@@ -38,6 +38,9 @@ en:
       product:
         one: Product
         other: Products
+      customer:
+        one: Customer
+        other: Customers
     attributes:
       category:
         name: name
