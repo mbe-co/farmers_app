@@ -38,6 +38,9 @@ pt-BR:
       product:
         one: Produto
         other: Produtos
+      customer:
+        one: Cliente
+        other: Clientes
     attributes:
       category:
         name: nome
