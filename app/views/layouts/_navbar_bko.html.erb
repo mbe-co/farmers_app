@@ -9,7 +9,10 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-          <% if user_signed_in? %>
+          <% if user_signed_in? && current_user.admin? %>
+            <li>
+              <%= link_to t(Customer.model_name.human(count: 2)), backoffice_customers_path, class: 'nav-link active' %>
+            </li>
             <li>
               <%= link_to t(Product.model_name.human(count: 2)), backoffice_products_path, class: 'nav-link active' %>
             </li>
