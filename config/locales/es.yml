@@ -23,6 +23,7 @@ es:
     delete: Eliminar
     new: Nuevo
     back: Vuelve
+    details: Detalles
     employees_login: "¿empleado? acceso"
     list_categories: enumerar categorías
   activerecord:

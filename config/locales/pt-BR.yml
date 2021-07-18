@@ -22,6 +22,7 @@ pt-BR:
     delete: Deletar
     new: Novo
     back: Voltar
+    details: Ver detalhes
     employees_login: "funcionário? faça login"
     list_categories: listar categorias
   activerecord:

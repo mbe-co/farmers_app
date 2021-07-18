@@ -22,6 +22,7 @@ en:
     delete: Delete
     new: New
     back: Back
+    details: Details
     employees_login: "employee? login"
     list_categories: list categories
   activerecord:
