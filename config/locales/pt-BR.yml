@@ -59,6 +59,9 @@ pt-BR:
         email: email
         password: senha
         name: nome
+      customer/status:
+        active: ativo
+        inactive: desativado
   date:
     abbr_day_names:
     - dom

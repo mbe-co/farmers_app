@@ -60,6 +60,9 @@ es:
         email: email
         password: contraseña
         name: nombre
+      customer/status:
+        active: activo
+        inactive: inactivo
   date:
     abbr_day_names:
     - dom

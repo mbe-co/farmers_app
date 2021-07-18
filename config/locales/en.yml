@@ -59,6 +59,9 @@ en:
         email: email
         password: password
         name: name
+      customer/status:
+        active: active
+        inactive: inactive
   date:
     abbr_day_names:
     - Sun
