@@ -1,0 +1,30 @@
+<h1> <%= Customer.model_name.human(count: @customers) %> </h1>
+
+<section class="col-sm-6 offset-1">
+  <hr>
+  <% if @customers.present? %>
+  <table class="table table-striped text-center">
+    <thead>
+      <tr>
+        <th scope="col"><%= Customer.human_attribute_name('name') %></th>
+        <th scope="col"><%= Customer.human_attribute_name('email') %></th>
+        <th scope="col"><%= Customer.human_attribute_name('status') %></th>
+        <th scope="col"><%= t('btn.details') %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @customers.each do |customer| %>
+        <tr>
+          <th scope="row"><%= customer.name %></th>
+          <td><%= customer.email %></td>
+          <td><%= customer.status_name %></td>
+          <td><%= link_to '-', backoffice_customer_path(customer),
+            class: "btn btn-light" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</section>
+<% else %>
+  <h4><%= t('messages.no_register') %></h4>
+<% end %>

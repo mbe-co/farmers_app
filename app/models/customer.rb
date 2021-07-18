@@ -9,4 +9,8 @@ class Customer < ApplicationRecord
   enum status: [:active, :inactive, :blocked]
 
   has_one :address
+
+  def status_name
+    Customer.human_attribute_name("status.#{status}")
+  end
 end
