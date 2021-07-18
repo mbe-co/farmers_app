@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     namespace :backoffice do
       resources :categories, except: [:show]
       resources :products, except: [:show]
-      resources :customers, only: [:index]
+      resources :customers, only: [:index, :show]
       get '/home', to: 'home#index'
     end
   end
