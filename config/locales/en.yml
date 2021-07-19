@@ -65,6 +65,7 @@ en:
       customer/status:
         active: active
         inactive: inactive
+        blocked: blocked
   date:
     abbr_day_names:
     - Sun
