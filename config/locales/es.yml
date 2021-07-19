@@ -23,7 +23,8 @@ es:
     delete: Eliminar
     new: Nuevo
     back: Vuelve
-    details: Detalles
+    search: Buscar
+    details: detalles
     employees_login: "¿empleado? acceso"
     list_categories: enumerar categorías
   activerecord:
@@ -61,6 +62,7 @@ es:
         email: email
         password: contraseña
         name: nombre
+        status: estado
       customer/status:
         active: activo
         inactive: inactivo

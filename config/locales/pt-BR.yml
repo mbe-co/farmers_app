@@ -22,7 +22,8 @@ pt-BR:
     delete: Deletar
     new: Novo
     back: Voltar
-    details: Ver detalhes
+    search: Buscar
+    details: ver detalhes
     employees_login: "funcionário? faça login"
     list_categories: listar categorias
   activerecord:
@@ -60,6 +61,7 @@ pt-BR:
         email: email
         password: senha
         name: nome
+        status: status
       customer/status:
         active: ativo
         inactive: desativado

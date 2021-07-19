@@ -32,7 +32,21 @@ feature 'Active customers list' do
 
       visit backoffice_customers_path
 
-      expect(page).to have_link('-', href: backoffice_customer_path(customer))
+      expect(page).to have_link('ver detalhes', href: backoffice_customer_path(customer))
+    end
+
+    it 'views a search input field' do
+      visit backoffice_customers_path
+
+      expect(page).to have_field('query')
+    end
+
+    it 'views a select with categories for filtering status' do
+      visit backoffice_customers_path
+
+      expect(page).to have_unchecked_field('active')
+      expect(page).to have_unchecked_field('inactive')
+      expect(page).to have_unchecked_field('blocked')
     end
   end
 

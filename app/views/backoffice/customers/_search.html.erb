@@ -1,0 +1,19 @@
+<%= form_with url: backoffice_customers_path, method: :get,
+  class: "row justify-content-center h-100"  do |form| %>
+
+  <div class="col-6 my-auto">
+    <%= form.text_field :query, placeholder: t('btn.search'), class: "form-control" %>
+  </div>
+
+  <div class="col-auto my-auto">
+    <%= form.collection_radio_buttons(:status, statuses, :first, :first) do |status| %>
+        <%= status.radio_button(class: "form-check-input") %>
+        <%= status.label(class: "form-check-label mx-1") %>
+      <% end %>
+  </div>
+
+  <div class="col-auto my-auto">
+    <%= form.submit t('btn.search') %>
+  </div>
+
+<% end %>

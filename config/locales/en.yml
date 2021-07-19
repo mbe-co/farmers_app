@@ -22,7 +22,8 @@ en:
     delete: Delete
     new: New
     back: Back
-    details: Details
+    search: Search
+    details: details
     employees_login: "employee? login"
     list_categories: list categories
   activerecord:
@@ -60,6 +61,7 @@ en:
         email: email
         password: password
         name: name
+        status: status
       customer/status:
         active: active
         inactive: inactive
