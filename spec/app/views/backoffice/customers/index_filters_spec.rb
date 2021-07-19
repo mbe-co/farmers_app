@@ -1,17 +1,16 @@
 require 'rails_helper'
 
 feature 'Customers filtering on backoffice index' do
-  let(:admin)    { create(:user, role: :admin) }
-  let(:customer) { create(:customer, name: 'Emily', email: 'emily@mail.com') }
+  let(:admin) { create(:user, role: :admin) }
 
   context 'when admin' do
     include_context 'when admin authenticated'
 
-    it 'views only active customers when no filter was passed' do
-      create(:customer, name: 'Active')
-      create(:customer, name: 'Blocked', status: :blocked)
-      create(:customer, name: 'Inactive', status: :inactive)
+    let!(:ativo)      { create(:customer, name: 'Active') }
+    let!(:inativo)    { create(:customer, name: 'Blocked', status: :blocked) }
+    let!(:bloqueado)  { create(:customer, name: 'Inactive', status: :inactive) }
 
+    it 'views only active customers when no filter was passed' do
       visit backoffice_customers_path
 
       expect(page).to have_content('Active')
@@ -20,10 +19,6 @@ feature 'Customers filtering on backoffice index' do
     end
 
     it 'views inactive customers when filtering inactive' do
-      create(:customer, name: 'Active')
-      create(:customer, name: 'Blocked', status: :blocked)
-      create(:customer, name: 'Inactive', status: :inactive)
-
       visit backoffice_customers_path
       choose 'inactive'
       click_on 'Buscar'
@@ -34,10 +29,6 @@ feature 'Customers filtering on backoffice index' do
     end
 
     it 'views blocked customers when filtering blocked' do
-      create(:customer, name: 'Active')
-      create(:customer, name: 'Blocked', status: :blocked)
-      create(:customer, name: 'Inactive', status: :inactive)
-
       visit backoffice_customers_path
       choose 'blocked'
       click_on 'Buscar'

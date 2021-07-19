@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 feature 'Active customers list' do
-  let(:admin)    { create(:user, role: :admin) }
-  let(:employee)  { create(:user) }
+  let(:admin) { create(:user, role: :admin) }
+  let(:employee) { create(:user) }
   let(:customer) { create(:customer) }
 
   context 'when admin' do
