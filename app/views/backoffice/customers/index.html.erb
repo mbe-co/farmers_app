@@ -1,6 +1,7 @@
 <h1> <%= Customer.model_name.human(count: @customers) %> </h1>
 
 <section class="col-sm-6 offset-1">
+  <%= render partial: 'search', locals: { statuses: @statuses } %>
   <hr>
   <% if @customers.present? %>
   <table class="table table-striped text-center">
@@ -9,7 +10,7 @@
         <th scope="col"><%= Customer.human_attribute_name('name') %></th>
         <th scope="col"><%= Customer.human_attribute_name('email') %></th>
         <th scope="col"><%= Customer.human_attribute_name('status') %></th>
-        <th scope="col"><%= t('btn.details') %></th>
+        <th scope="col"></th>
       </tr>
     </thead>
     <tbody>
@@ -18,7 +19,7 @@
           <th scope="row"><%= customer.name %></th>
           <td><%= customer.email %></td>
           <td><%= customer.status_name %></td>
-          <td><%= link_to '-', backoffice_customer_path(customer),
+          <td><%= link_to t('btn.details'), backoffice_customer_path(customer),
             class: "btn btn-light" %></td>
         </tr>
       <% end %>
