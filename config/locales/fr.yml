@@ -67,6 +67,7 @@ fr:
       customer/status:
         active: actif
         inactive: inactif
+        blocked: bloqué
   date:
     abbr_day_names:
     - dim

@@ -4,7 +4,11 @@ module Backoffice
 
     def index
       @statuses = Customer.statuses
-      @customers = Customer.active
+      @customers =  if params[:status]
+                      Customer.where('status = ?', params[:status])
+                    else
+                      Customer.active
+                    end
     end
   end
 end

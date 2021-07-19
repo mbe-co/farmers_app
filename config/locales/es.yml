@@ -66,6 +66,7 @@ es:
       customer/status:
         active: activo
         inactive: inactivo
+        blocked: obstruido
   date:
     abbr_day_names:
     - dom

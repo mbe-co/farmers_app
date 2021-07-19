@@ -65,6 +65,7 @@ pt-BR:
       customer/status:
         active: ativo
         inactive: desativado
+        blocked: bloqueado
   date:
     abbr_day_names:
     - dom
