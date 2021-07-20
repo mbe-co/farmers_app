@@ -5,18 +5,15 @@ module Backoffice
     def index
       @statuses = Customer.statuses
 
-      @customers =
-        if params[:status].present? && params[:query].present?
-          Customer.where('status = ? AND name LIKE ? OR email LIKE ?',
-            params[:status], "%#{params[:query]}%", "%#{params[:query]}%")
-        elsif params[:status].present?
-          Customer.where('status = ?', params[:status])
-        elsif params[:query].present?
-          Customer.where('name LIKE ? OR email LIKE ?', "%#{params[:query]}%",
-            "%#{params[:query]}%")
-        else
-          Customer.active
-        end
+      @customers = if params[:status].present? && params[:query].present?
+                     Customer.by_status(params[:status]).by_name_or_email(params[:query])
+                   elsif params[:status].present?
+                     Customer.by_status(params[:status])
+                   elsif params[:query].present?
+                     Customer.by_name_or_email(params[:query])
+                   else
+                     Customer.active
+                   end
     end
   end
 end

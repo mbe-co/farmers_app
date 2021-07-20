@@ -8,6 +8,9 @@ class Customer < ApplicationRecord
 
   enum status: [:active, :inactive, :blocked]
 
+  scope :by_name_or_email, ->(params) { where('name LIKE ? OR email LIKE ?', "%#{params}%", "%#{params}%") }
+  scope :by_status, ->(status) { where('status = ?', status) }
+
   has_one :address
 
   def status_name
