@@ -1,6 +1,7 @@
 module Backoffice
   class HomeController < ApplicationController
-    before_action :authenticate_user!
+    include AdminsOnly
+
     def index
     end
   end

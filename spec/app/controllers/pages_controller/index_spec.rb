@@ -1,5 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe IndexController, type: :controller do
+RSpec.describe PagesController, type: :controller do
+  describe 'index' do
 
+  end
 end
