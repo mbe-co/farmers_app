@@ -1,0 +1,18 @@
+require 'rails_helper'
+
+RSpec.describe Backoffice::CustomersController, type: :request do
+  let(:admin) { create(:user, role: :admin) }
+  let!(:customers) { create_list(:customer, 3) }
+
+  describe 'Customers listing' do
+    it 'successfully when admin' do
+      sign_in admin
+
+      get backoffice_customers_path
+
+      expect(response).to be_successful
+      expect(response.body).to include(customers.first.name)
+      expect(response.body).to include(customers.second.name)
+  end
+end
+end
