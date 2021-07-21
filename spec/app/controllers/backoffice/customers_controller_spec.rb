@@ -13,6 +13,13 @@ RSpec.describe Backoffice::CustomersController, type: :request do
       expect(response).to be_successful
       expect(response.body).to include(customers.first.name)
       expect(response.body).to include(customers.second.name)
+    end
+
+    it 'not logged as admin' do
+      get backoffice_customers_path
+
+      expect(response).to be_successful
+      expect(response.body).to include('Não autorizado')
+    end
   end
-end
 end
