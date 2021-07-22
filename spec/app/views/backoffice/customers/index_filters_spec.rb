@@ -8,75 +8,45 @@ feature 'Customers filtering on backoffice index' do
 
     let!(:ativo) do
       create(:customer,
-             name: 'Active',
+             name: 'Ana',
              email: 'active@mail.com')
     end
 
     let!(:inativo) do
       create(:customer,
-             name: 'Blocked',
+             name: 'Mariana',
              status: :blocked,
              email: 'blocked@mail.com')
     end
 
     let!(:bloqueado) do
       create(:customer,
-             name: 'Inactive',
+             name: 'Jessie',
              status: :inactive,
              email: 'inactive@mail.com')
-    end
-
-    context 'filtering' do
-      it 'views only active customers when no filter was passed' do
-        visit backoffice_customers_path
-
-        expect(page).to have_content('Active')
-        expect(page).not_to have_content('Inactive')
-        expect(page).not_to have_content('Blocked')
-      end
-
-      it 'views inactive customers when filtering inactive' do
-        visit backoffice_customers_path
-        choose 'inactive'
-        click_on 'Buscar'
-
-        expect(page).to have_content('Inactive')
-        expect(page).not_to have_content('Active')
-        expect(page).not_to have_content('Blocked')
-      end
-
-      it 'views blocked customers when filtering blocked' do
-        visit backoffice_customers_path
-        choose 'blocked'
-        click_on 'Buscar'
-
-        expect(page).to have_content('Blocked')
-        expect(page).not_to have_content('Active')
-        expect(page).not_to have_content('Inactive')
-      end
     end
 
     context 'searching' do
       it 'successfully by name' do
         visit backoffice_customers_path
 
-        fill_in 'query', with: 'Active'
+        fill_in 'q_name_or_email_cont', with: 'Ana'
         click_on 'Buscar'
 
-        expect(page).to have_content('Active')
-        expect(page).not_to have_content('Inactive')
+        expect(page).to have_content('Ana')
+        expect(page).to have_content('Mariana')
         expect(page).not_to have_content('Blocked')
       end
 
       it 'successfully by email' do
         visit backoffice_customers_path
 
-        fill_in 'query', with: 'blocked@mail.com'
+        fill_in 'q_name_or_email_cont', with: 'blocked'
         click_on 'Buscar'
 
-        expect(page).to have_content('Blocked')
-        expect(page).not_to have_content('Active')
-        expect(page).not_to have_content('Inactive')
+        expect(page).to have_content('Mariana')
+        expect(page).not_to have_content('Ana')
+        expect(page).not_to have_content('Jessie')
       end
     end
   end

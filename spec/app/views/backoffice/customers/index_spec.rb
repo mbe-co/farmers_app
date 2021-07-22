@@ -38,15 +38,7 @@ feature 'Active customers list' do
     it 'views a search input field' do
       visit backoffice_customers_path
 
-      expect(page).to have_field('query')
-    end
-
-    it 'views a select with categories for filtering status' do
-      visit backoffice_customers_path
-
-      expect(page).to have_unchecked_field('active')
-      expect(page).to have_unchecked_field('inactive')
-      expect(page).to have_unchecked_field('blocked')
+      expect(page).to have_field('q_name_or_email_cont')
     end
   end
 
