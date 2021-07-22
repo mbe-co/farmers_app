@@ -7,9 +7,9 @@
   <table class="table table-striped text-center">
     <thead>
       <tr>
-        <th scope="col"><%= Customer.human_attribute_name('name') %></th>
-        <th scope="col"><%= Customer.human_attribute_name('email') %></th>
-        <th scope="col"><%= Customer.human_attribute_name('status') %></th>
+        <th scope="col"><%= sort_link(@q, :name) %></th>
+        <th scope="col"><%= sort_link(@q, :email) %></th>
+        <th scope="col"><%= sort_link(@q, :status) %></th>
         <th scope="col"></th>
       </tr>
     </thead>
