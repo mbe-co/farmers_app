@@ -1,7 +1,7 @@
 <h1> <%= Customer.model_name.human(count: @customers) %> </h1>
 
 <section class="col-sm-6 offset-1">
-  <%= render partial: 'search', locals: { statuses: @statuses } %>
+  <%= render partial: 'search' %>
   <hr>
   <% if @customers.present? %>
   <table class="table table-striped text-center">

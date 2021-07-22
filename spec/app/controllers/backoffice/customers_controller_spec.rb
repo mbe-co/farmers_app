@@ -20,7 +20,7 @@ RSpec.describe Backoffice::CustomersController, type: :request do
 
       sign_in admin
 
-      get backoffice_customers_path, params: { "q"=> { "name_or_email_cont"=> first.name } }
+      get backoffice_customers_path, params: { 'q' => { 'name_or_email_cont' => first.name } }
 
       expect(response).to be_successful
       expect(response.body).to include(first.name)
