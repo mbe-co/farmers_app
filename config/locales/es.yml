@@ -34,8 +34,10 @@ es:
         restrict_dependent_destroy:
           has_one: No se puede eliminar el registro porque existe un %{record} dependiente
           has_many: No se puede eliminar el registro porque existen %{record} dependientes
-    models: 
-      category: 
+    models:
+      address:
+        one: Dirección
+      category:
         one: Categoría
         other: Categorías
       product:
@@ -45,6 +47,13 @@ es:
         one: Cliente
         other: Clientes
     attributes:
+      address:
+        street: la carretera
+        number: numero
+        complement: complemento
+        city: ciudad
+        state: estado
+        zipcode: código postal
       category:
         name: nombre
       product:

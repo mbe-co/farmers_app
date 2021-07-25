@@ -33,8 +33,10 @@ en:
         restrict_dependent_destroy:
           has_one: Cannot delete record because a dependent %{record} exists
           has_many: Cannot delete record because dependent %{record} exist
-    models: 
-      category: 
+    models:
+      address:
+        one: Address
+      category:
         one: Category
         other: Categories
       product:
@@ -44,6 +46,13 @@ en:
         one: Customer
         other: Customers
     attributes:
+      address:
+        street: street
+        number: number
+        complement: complement
+        city: city
+        state: state
+        zipcode: zipcode
       category:
         name: name
       product:

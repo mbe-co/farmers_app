@@ -35,8 +35,10 @@ fr:
             dépendant(e) existe
           has_many: Vous ne pouvez pas supprimer l'enregistrement parce que les %{record}
             dépendants existent
-    models: 
-      category: 
+    models:
+      address:
+        one: Adresse
+      category:
         one: Catégorie
         other: Catégories
       product:
@@ -46,6 +48,13 @@ fr:
         one: Client
         other: Les clients
     attributes:
+      address:
+        street: route
+        number: numéro
+        complement: complément
+        city: ville
+        state: etat
+        zipcode: code postal
       category:
         name: nom
       product:

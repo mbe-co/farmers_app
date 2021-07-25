@@ -33,8 +33,10 @@ pt-BR:
         restrict_dependent_destroy:
           has_one: Não é possível excluir o registro pois existe um %{record} dependente
           has_many: Não é possível excluir o registro pois existem %{record} dependentes
-    models: 
-      category: 
+    models:
+      address:
+        one: Endereço
+      category:
         one: Categoria
         other: Categorias
       product:
@@ -44,6 +46,13 @@ pt-BR:
         one: Cliente
         other: Clientes
     attributes:
+      address:
+        street: rua
+        number: número
+        complement: complemento
+        city: cidade
+        state: estado
+        zipcode: CEP
       category:
         name: nome
       product:
