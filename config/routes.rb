@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     devise_for :users
 
     get 'profile', to: 'customers#show'
+    post 'profile', to: 'customers#create'
 
     namespace :backoffice do
       resources :categories, except: [:show]
