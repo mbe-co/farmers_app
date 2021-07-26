@@ -50,6 +50,7 @@ en:
         street: street
         number: number
         complement: complement
+        neighborhood: neighborhood
         city: city
         state: state
         zipcode: zipcode

@@ -50,6 +50,7 @@ pt-BR:
         street: rua
         number: número
         complement: complemento
+        neighborhood: bairro
         city: cidade
         state: estado
         zipcode: CEP

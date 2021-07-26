@@ -52,6 +52,7 @@ fr:
         street: route
         number: numéro
         complement: complément
+        neighborhood: quartier
         city: ville
         state: etat
         zipcode: code postal

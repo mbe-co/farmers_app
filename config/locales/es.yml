@@ -51,6 +51,7 @@ es:
         street: la carretera
         number: numero
         complement: complemento
+        neighborhood: distrito
         city: ciudad
         state: estado
         zipcode: código postal
