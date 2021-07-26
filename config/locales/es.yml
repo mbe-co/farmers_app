@@ -71,6 +71,7 @@ es:
         email: email
         password: contraseña
         name: nombre
+        phone: teléfono
         status: estado
       customer/status:
         active: activo

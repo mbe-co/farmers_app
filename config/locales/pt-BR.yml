@@ -70,6 +70,7 @@ pt-BR:
         email: email
         password: senha
         name: nome
+        phone: telefone
         status: status
       customer/status:
         active: ativo

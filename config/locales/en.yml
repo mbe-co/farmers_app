@@ -70,6 +70,7 @@ en:
         email: email
         password: password
         name: name
+        phone: phone
         status: status
       customer/status:
         active: active

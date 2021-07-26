@@ -72,6 +72,7 @@ fr:
         email: email
         password: le mot de passe
         name: nom
+        phone: téléphone
         status: statut
       customer/status:
         active: actif
