@@ -19,7 +19,8 @@ feature 'Customer views profile' do
 
       visit profile_path
 
-      expect(page).to have_button('Atualizar')
+      expect(page).to have_link('Meus dados', href: profile_path)
+      expect(page).to have_link('Meu endereço', href: profile_address_path)
     end
   end
 

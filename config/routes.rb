@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
     get 'profile', to: 'customers#show'
     post 'profile', to: 'customers#create'
+    get 'profile/address', to: 'address#edit'
+    patch 'profile/address', to: 'address#update'
 
     namespace :backoffice do
       resources :categories, except: [:show]

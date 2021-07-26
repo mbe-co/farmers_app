@@ -1,0 +1,26 @@
+<%= form_with model: @customer, url: profile_path do |form| %>
+
+  <div class="mb-3 row">
+      <%= form.label :email, class: "col-sm-2 col-form-label" %>
+    <div class="col-sm-10">
+      <%= form.text_field :email, class: "form-control-plaintext" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-7">
+      <%= form.label :name, class: "form-label" %>
+      <%= form.text_field :name, class: "form-control" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :phone, class: "form-label" %>
+      <%= form.text_field :phone, class: "form-control" %>
+    </div>
+
+    <div class="col-2">
+      <%= form.submit 'Alterar' %>
+    </div>
+  </div>
+
+<% end %>
