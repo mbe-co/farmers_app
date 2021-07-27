@@ -5,17 +5,19 @@ RSpec.describe AddressController, type: :request do
 
   let(:params) do
     {
-      zipcode: '07896110',
-      street: 'Alameda Santos',
-      number: '78',
-      complement: '',
-      neighborhood: 'Bela Vista',
-      city: 'São Paulo',
-      state: 'São Paulo'
+      address: {
+        zipcode: '07896110',
+        street: 'Alameda Santos',
+        number: '78',
+        complement: '',
+        neighborhood: 'Bela Vista',
+        city: 'São Paulo',
+        state: 'São Paulo'
+      }
     }
   end
 
-  describe '#edit' do
+  describe '# GET /profile/address' do
     it 'successfully' do
       sign_in customer
 
@@ -35,11 +37,19 @@ RSpec.describe AddressController, type: :request do
     end
   end
 
-  describe '#update' do
+  describe '# PATCH /profile/address' do
     it 'successfully' do
       sign_in customer
 
       patch profile_address_path, params: params
+
+      expect(subject).to redirect_to(profile_address_path)
+    end
+
+    it 'without params' do
+      sign_in customer
+
+      patch profile_address_path
 
       expect(subject).to redirect_to(profile_address_path)
     end

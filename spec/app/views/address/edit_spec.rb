@@ -2,7 +2,7 @@ require 'rails_helper'
 
 feature 'Customer update address' do
   let(:customer) { create(:customer) }
-  let!(:address) { create(:address, street: 'tres',customer: customer) }
+  let!(:address) { create(:address, street: 'tres', customer: customer) }
 
   context 'when authenticated' do
     it 'from root path' do
@@ -25,7 +25,7 @@ feature 'Customer update address' do
       click_on 'Alterar'
 
       expect(page).to have_content('Alterado com sucesso')
-      expect(page).to have_selector("input[value='dois']")
+      expect(address.reload.street).to eq('dois')
     end
 
     context 'validations' do
@@ -42,6 +42,9 @@ feature 'Customer update address' do
         click_on 'Alterar'
 
         expect(page).to have_content('não pode ficar em branco', count: 6)
+        expect(address.zipcode).not_to be_blank
+        expect(address.street).not_to be_blank
+        expect(address.number).not_to be_blank
       end
     end
   end
