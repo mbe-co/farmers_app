@@ -1,3 +1,9 @@
+<% if @address.errors.any? %>
+  <% @address.errors.full_messages.each do |msg| %>
+    <%= msg %>
+  <% end %>
+<% end %>
+
 <%= form_with model: @address, url: profile_address_path, method: :patch do |form| %>
 
   <div class="row g-6 mb-3">
