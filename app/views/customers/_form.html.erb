@@ -1,3 +1,9 @@
+<% if @customer.errors.any? %>
+  <% @customer.errors.full_messages.each do |msg| %>
+    <%= msg %>
+  <% end %>
+<% end %>
+
 <%= form_with model: @customer, url: profile_path do |form| %>
 
   <div class="mb-3 row">

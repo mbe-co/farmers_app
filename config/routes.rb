@@ -5,8 +5,8 @@ Rails.application.routes.draw do
     devise_for :customers
     devise_for :users
 
-    get 'profile', to: 'customers#show'
-    post 'profile', to: 'customers#create'
+    get 'profile', to: 'customers#edit'
+    patch 'profile', to: 'customers#update'
     get 'profile/address', to: 'address#edit'
     patch 'profile/address', to: 'address#update'
 

@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-feature 'Customer views profile' do
-  let!(:customer) { create(:customer) }
+feature 'Customer views/edit profile' do
+  let!(:customer) { create(:customer, name: 'Joana') }
 
   context 'when authenticated' do
     it 'from home page' do
@@ -21,6 +21,18 @@ feature 'Customer views profile' do
 
       expect(page).to have_link('Meus dados', href: profile_path)
       expect(page).to have_link('Meu endereço', href: profile_address_path)
+    end
+
+    it 'update name' do
+      login_as customer
+
+      visit profile_path
+
+      fill_in 'nome', with: 'Joana Darc'
+      click_on 'Alterar'
+
+      expect(page).to have_content('Alterado com sucesso')
+      expect(page).to have_selector("input[value='Joana Darc']")
     end
   end
 
