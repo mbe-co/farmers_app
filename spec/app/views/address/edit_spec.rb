@@ -17,7 +17,7 @@ feature 'Customer update address' do
       expect(page).to have_button('Alterar')
     end
 
-    it 'successfully' do
+    it 'update when exists' do
       login_as customer
 
       visit profile_address_path
@@ -26,6 +26,32 @@ feature 'Customer update address' do
 
       expect(page).to have_content('Alterado com sucesso')
       expect(address.reload.street).to eq('dois')
+    end
+
+    it 'creates when does not exist' do
+      other_customer = create(:customer)
+
+      login_as other_customer
+
+      visit profile_address_path
+
+      fill_in 'rua', with: 'seis'
+      fill_in 'número', with: '234'
+      fill_in 'bairro', with: 'noronha'
+      fill_in 'cidade', with: 'Sao Paulo'
+      fill_in 'estado', with: 'SP'
+      fill_in 'CEP', with: '05638900'
+      click_on 'Alterar'
+
+      other_customer.reload
+
+      expect(page).to have_content('Alterado com sucesso')
+      expect(other_customer.address).not_to be_nil
+      expect(other_customer.address).to have_attributes(street: 'seis')
+      expect(other_customer.address).to have_attributes(number: '234')
+      expect(other_customer.address).to have_attributes(neighborhood: 'noronha')
+      expect(other_customer.address).to have_attributes(city: 'Sao Paulo')
+      expect(other_customer.address).to have_attributes(state: 'SP')
     end
 
     context 'validations' do
