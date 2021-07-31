@@ -4,4 +4,10 @@ FactoryBot.define do
     name { FFaker::Name.first_name }
     password { '123456' }
   end
+
+  trait :with_address do
+    after(:create) do |customer|
+      customer.address = FactoryBot.create(:address)
+    end
+  end
 end
