@@ -7,9 +7,7 @@ class AddressController < ApplicationController
 
   # PATCH
   def update
-    @address.attributes = address_params
-
-    if @address.save
+    if @address.update(address_params)
       redirect_to profile_address_path, notice: t('messages.success_on_edit')
     else
       render :edit
