@@ -6,6 +6,11 @@ services:
       - farmers_data:/var/lib/postgresqldata
     environment:
       - POSTGRES_PASSWORD=postgres
+  mailcacther:
+    image: schickling/mailcatcher
+    ports:
+      - '1025:1025'
+      - '1080:1080'
   web:
     build: .
     volumes:
@@ -14,7 +19,8 @@ services:
       - '3000:3000'
     depends_on:
       - db
-    environment:
+    links:
+      - mailcacther
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
