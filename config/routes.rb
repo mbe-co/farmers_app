@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
     get 'profile', to: 'customers#edit'
     patch 'profile', to: 'customers#update'
+    patch 'customer_reset_password', to: 'customers#reset_password'
     get 'profile/address', to: 'address#edit'
     patch 'profile/address', to: 'address#update'
 

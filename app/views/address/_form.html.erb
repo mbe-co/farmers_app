@@ -1,6 +1,6 @@
 <% if @address.errors.any? %>
   <% @address.errors.full_messages.each do |msg| %>
-    <%= msg %>
+    <p class="alert alert-dark"><%= msg %></p>
   <% end %>
 <% end %>
 
