@@ -1,12 +1,16 @@
 en:
-  welcome: "Welcome!"
+  welcome: Welcome!
   menu:
-    about: "about"
-    cart: "shopping bag"
-    choose_products: "choose products"
-    login: "login"
-    logout: "logout"
-    my_profile: "my profile"
+    about: about
+    cart: shopping bag
+    choose_products: choose products
+    login: login
+    logout: logout
+    my_profile: my profile
+    my_address: My address
+    my_data: My data
+    add_avatar: Add avatar
+    change_my_password: Change password
     backoffice: backoffice
   messages:
     no_register: There is no record
@@ -33,8 +37,10 @@ en:
         restrict_dependent_destroy:
           has_one: Cannot delete record because a dependent %{record} exists
           has_many: Cannot delete record because dependent %{record} exist
-    models: 
-      category: 
+    models:
+      address:
+        one: Address
+      category:
         one: Category
         other: Categories
       product:
@@ -44,6 +50,14 @@ en:
         one: Customer
         other: Customers
     attributes:
+      address:
+        street: street
+        number: number
+        complement: complement
+        neighborhood: neighborhood
+        city: city
+        state: state
+        zipcode: zipcode
       category:
         name: name
       product:
@@ -61,6 +75,7 @@ en:
         email: email
         password: password
         name: name
+        phone: phone
         status: status
       customer/status:
         active: active

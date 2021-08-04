@@ -1,12 +1,16 @@
 fr:
-  welcome: "Bienvenue!"
+  welcome: Bienvenue!
   menu:
-    about: "qui sommes-nous"
-    cart: "sac de courses"
-    choose_products: "choisir des produits"
-    login: "login"
-    logout: "se déconnecter"
-    my_profile: "mon profil"
+    about: qui sommes-nous
+    cart: sac de courses
+    choose_products: choisir des produits
+    login: login
+    logout: se déconnecter
+    my_profile: mon profil
+    my_address: Mon adresse
+    my_data: Mes données
+    add_avatar: Ajouter un avatar
+    change_my_password: Changer le mot de passe
     backoffice: backoffice
   messages:
     no_register: Il n'y a pas des registres
@@ -35,8 +39,10 @@ fr:
             dépendant(e) existe
           has_many: Vous ne pouvez pas supprimer l'enregistrement parce que les %{record}
             dépendants existent
-    models: 
-      category: 
+    models:
+      address:
+        one: Adresse
+      category:
         one: Catégorie
         other: Catégories
       product:
@@ -46,6 +52,14 @@ fr:
         one: Client
         other: Les clients
     attributes:
+      address:
+        street: route
+        number: numéro
+        complement: complément
+        neighborhood: quartier
+        city: ville
+        state: etat
+        zipcode: code postal
       category:
         name: nom
       product:
@@ -63,6 +77,7 @@ fr:
         email: email
         password: le mot de passe
         name: nom
+        phone: téléphone
         status: statut
       customer/status:
         active: actif

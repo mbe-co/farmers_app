@@ -1,0 +1,36 @@
+<% if @customer.errors.any? %>
+  <% @customer.errors.full_messages.each do |msg| %>
+    <p class="alert alert-dark"><%= msg %></p>
+  <% end %>
+<% end %>
+
+<%= form_with model: @customer, url: profile_path do |form| %>
+
+  <div class="mb-3 row">
+      <%= form.label :email, class: "col-sm-2 col-form-label" %>
+    <div class="col-sm-6">
+      <%= form.text_field :email, class: "form-control-plaintext" %>
+    </div>
+    <div class="col-sm-4">
+      <%= link_to t('menu.change_my_password'), customer_reset_password_path,
+        method: :patch, class: "btn btn-secondary" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-7">
+      <%= form.label :name, class: "form-label" %>
+      <%= form.text_field :name, class: "form-control" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :phone, class: "form-label" %>
+      <%= form.text_field :phone, class: "form-control" %>
+    </div>
+
+    <div class="col-2">
+      <%= form.submit 'Alterar' %>
+    </div>
+  </div>
+
+<% end %>

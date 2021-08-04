@@ -21,6 +21,11 @@ pt-BR:
         subject: "Instruções de confirmação"
       reset_password_instructions:
         subject: "Instruções de troca de senha"
+        greeting: "Olá %{recipient}!"
+        action: "Alterar minha senha"
+        instruction: "Alguém solicitou um link para alterar sua senha. Você pode fazer isso através do link abaixo."
+        instruction_2: "Se você não solicitou a alteração, por favor ignore este email."
+        instruction_3: "Sua senha não será alterada a menos que você acesse o link abaixo e crie uma nova senha."
       unlock_instructions:
         subject: "Instruções de desbloqueio"
       email_changed:

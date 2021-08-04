@@ -1,14 +1,18 @@
 es:
-  welcome: "Bienvenida!"
+  welcome: Bienvenida!
   menu:
-    about: "acerca de"
-    cart: "bolsa de la compra"
-    choose_products: "elegir productos"
-    login: "acceso"
-    logout: "cerrar sesión"
-    my_profile: "mi perfil"
+    about: acerca de
+    cart: bolsa de la compra
+    choose_products: elegir productos
+    login: acceso
+    logout: cerrar sesión
+    my_profile: mi perfil
+    my_address: Mi dirección
+    my_data: Mis datos
+    add_avatar: Agregar avatar
+    change_my_password: Cambiar contraseña
     backoffice: backoffice
-  welcome: "¡Bienvenida!"
+  welcome: ¡Bienvenida!
   messages:
     no_register: No hay registros
     not_authorized: No autorizado
@@ -34,8 +38,10 @@ es:
         restrict_dependent_destroy:
           has_one: No se puede eliminar el registro porque existe un %{record} dependiente
           has_many: No se puede eliminar el registro porque existen %{record} dependientes
-    models: 
-      category: 
+    models:
+      address:
+        one: Dirección
+      category:
         one: Categoría
         other: Categorías
       product:
@@ -45,6 +51,14 @@ es:
         one: Cliente
         other: Clientes
     attributes:
+      address:
+        street: la carretera
+        number: numero
+        complement: complemento
+        neighborhood: distrito
+        city: ciudad
+        state: estado
+        zipcode: código postal
       category:
         name: nombre
       product:
@@ -62,6 +76,7 @@ es:
         email: email
         password: contraseña
         name: nombre
+        phone: teléfono
         status: estado
       customer/status:
         active: activo
