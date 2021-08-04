@@ -1,14 +1,18 @@
 es:
-  welcome: "Bienvenida!"
+  welcome: Bienvenida!
   menu:
-    about: "acerca de"
-    cart: "bolsa de la compra"
-    choose_products: "elegir productos"
-    login: "acceso"
-    logout: "cerrar sesión"
-    my_profile: "mi perfil"
+    about: acerca de
+    cart: bolsa de la compra
+    choose_products: elegir productos
+    login: acceso
+    logout: cerrar sesión
+    my_profile: mi perfil
+    my_address: Mi dirección
+    my_data: Mis datos
+    add_avatar: Agregar avatar
+    change_my_password: Cambiar contraseña
     backoffice: backoffice
-  welcome: "¡Bienvenida!"
+  welcome: ¡Bienvenida!
   messages:
     no_register: No hay registros
     not_authorized: No autorizado

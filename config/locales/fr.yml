@@ -1,12 +1,16 @@
 fr:
-  welcome: "Bienvenue!"
+  welcome: Bienvenue!
   menu:
-    about: "qui sommes-nous"
-    cart: "sac de courses"
-    choose_products: "choisir des produits"
-    login: "login"
-    logout: "se déconnecter"
-    my_profile: "mon profil"
+    about: qui sommes-nous
+    cart: sac de courses
+    choose_products: choisir des produits
+    login: login
+    logout: se déconnecter
+    my_profile: mon profil
+    my_address: Mon adresse
+    my_data: Mes données
+    add_avatar: Ajouter un avatar
+    change_my_password: Changer le mot de passe
     backoffice: backoffice
   messages:
     no_register: Il n'y a pas des registres

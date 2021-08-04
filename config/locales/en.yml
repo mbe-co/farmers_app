@@ -1,12 +1,16 @@
 en:
-  welcome: "Welcome!"
+  welcome: Welcome!
   menu:
-    about: "about"
-    cart: "shopping bag"
-    choose_products: "choose products"
-    login: "login"
-    logout: "logout"
-    my_profile: "my profile"
+    about: about
+    cart: shopping bag
+    choose_products: choose products
+    login: login
+    logout: logout
+    my_profile: my profile
+    my_address: My address
+    my_data: My data
+    add_avatar: Add avatar
+    change_my_password: Change password
     backoffice: backoffice
   messages:
     no_register: There is no record

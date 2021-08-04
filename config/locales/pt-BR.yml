@@ -1,12 +1,16 @@
 pt-BR:
-  welcome: "Boas Vindas!"
+  welcome: Boas Vindas!
   menu:
-    about: "sobre"
-    cart: "sacola de compras"
-    choose_products: "escolher produtos"
-    login: "entrar"
-    logout: "sair"
-    my_profile: "meu perfil"
+    about: sobre
+    cart: sacola de compras
+    choose_products: escolher produtos
+    login: entrar
+    logout: sair
+    my_profile: meu perfil
+    my_address: Meu endereço
+    my_data: Meus dados
+    add_avatar: Adicionar avatar
+    change_my_password: Alterar senha
     backoffice: backoffice
   messages:
     no_register: Não há registros
