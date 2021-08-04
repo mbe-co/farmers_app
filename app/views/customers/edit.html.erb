@@ -1,11 +1,8 @@
 <h3><%= t('menu.my_profile') %></h3>
 
 <section class="col-sm-6 offset-1">
-  <%= link_to 'Adicionar avatar', root_path, class: "btn btn-secondary" %>
-  <%= link_to 'Meus dados', profile_path, class: "btn btn-secondary" %>
-  <%= link_to 'Meu endereço', profile_address_path, class: "btn btn-secondary" %>
+  <%= render 'shared/my_profile_links' %>
   <hr>
-
-  <%= render partial: 'form' %>
+  <%= render 'form' %>
 
 </section>

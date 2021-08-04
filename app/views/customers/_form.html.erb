@@ -8,11 +8,11 @@
 
   <div class="mb-3 row">
       <%= form.label :email, class: "col-sm-2 col-form-label" %>
-    <div class="col-sm-8">
+    <div class="col-sm-6">
       <%= form.text_field :email, class: "form-control-plaintext" %>
     </div>
-    <div class="col-sm-2">
-      <%= link_to 'Resetar Senha', customer_reset_password_path,
+    <div class="col-sm-4">
+      <%= link_to t('menu.change_my_password'), customer_reset_password_path,
         method: :patch, class: "btn btn-secondary" %>
     </div>
   </div>
