@@ -1,15 +1,20 @@
-<h1> <%= Category.model_name.human(count: 2) %> </h1>
-<div><%= link_to t('btn.new'), new_backoffice_category_path%></div>
-<% if @categories.present? %>
-    <table>
-      <% @categories.each do |category| %>
-        <tr>
-          <td><%= category.name %></td>
-          <td><%= link_to t('btn.edit'), edit_backoffice_category_path(category) %></td>
-          <td><%= link_to t('btn.delete'), backoffice_category_path(category), method: :delete, data: { confirm: t('messages.delete_confirmation') } %></td>
-        </tr>
-      <% end %>
-    </table>
-<% else %>
-  <%= t('messages.no_register') %>
-<% end %>
+<div class= 'container-fluid'>
+  <div class='row'>
+    <h1> <%= Category.model_name.human(count: 2) %> </h1>
+  </div>
+    <div><%= link_to t('btn.new'), new_backoffice_category_path, class: 'btn btn-secondary'%></div>
+    <% if @categories.present? %>
+        <table class='table table-striped'>
+          <% @categories.each do |category| %>
+            <tr>
+              <td><%= category.name %></td>
+              <td><%= link_to t('btn.edit'), edit_backoffice_category_path(category) %></td>
+              <td><%= link_to t('btn.delete'), backoffice_category_path(category), method: :delete, data: { confirm: t('messages.delete_confirmation') } %></td>
+            </tr>
+          <% end %>
+        </table>
+    <% else %>
+      <%= t('messages.no_register') %>
+    <% end %>
+
+</div>
