@@ -6,6 +6,7 @@ describe Customer, type: :model do
     it { is_expected.to validate_presence_of(:name) }
     it { is_expected.to validate_numericality_of(:phone).only_integer }
     it { is_expected.to have_one(:address) }
+    it { is_expected.to have_many(:orders) }
     it { is_expected.to have_db_index(:email) }
     it do
       is_expected.to define_enum_for(:status)
