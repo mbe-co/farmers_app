@@ -1,6 +1,7 @@
 module Backoffice
   class CategoriesController < ApplicationController
-    before_action :authenticate_user!
+    include AdminsOnly
+
     before_action :set_category, only: [:edit, :update, :destroy]
     def index
       @categories = Category.all
